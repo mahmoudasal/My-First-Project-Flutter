@@ -68,18 +68,24 @@ class _LoginState extends State<Login> {
                           decoration: InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                borderSide: BorderSide(color: Colors.black87, width: 2.0),
+                                borderSide: BorderSide(color: Color.fromARGB(255, 171, 153, 205), width: 2.0),
                               ),
                               labelText: "Enter Your Email",
                               fillColor: Colors.white,
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                borderSide: BorderSide(color: Colors.black87, width: 2.0),
+                                borderSide: BorderSide(color: Color.fromARGB(255, 171, 153, 205), width: 2.0),
                               ),
                               prefixIcon: Icon(Icons.email)),
-                          validator: (value) {
-                            if (value == null || value.isEmpty || !value.contains('@') || !value.contains('.')) {
-                              return 'Enter a Valid Email Address';
+                          validator: (mailCurrentValue) {
+                            RegExp regex = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+                            var mailNonNullValue = mailCurrentValue ?? "";
+                            if (mailNonNullValue.isEmpty) {
+                              return ("Email is required");
+                            } else if (mailNonNullValue.length < 7) {
+                              return ("Email Must be more than 6 characters");
+                            } else if (!regex.hasMatch(mailNonNullValue)) {
+                              return ("Password should contain '@' and '.' ");
                             }
                             return null;
                           },
@@ -103,7 +109,7 @@ class _LoginState extends State<Login> {
                         decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
-                            borderSide: BorderSide(color: Colors.black87, width: 2.0),
+                            borderSide: BorderSide(color: Color.fromARGB(255, 171, 153, 205), width: 2.0),
                           ),
                           labelText: "Enter Password",
                           fillColor: Colors.white,
@@ -150,7 +156,7 @@ class _LoginState extends State<Login> {
                             padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(3.0),
-                              side: BorderSide(color: Colors.black87, width: 1.5),
+                              side: BorderSide(color: Color.fromARGB(255, 171, 153, 205), width: 1.8),
                             ),
                             backgroundColor: Color.fromARGB(255, 255, 255, 255),
                             foregroundColor: Colors.black87),

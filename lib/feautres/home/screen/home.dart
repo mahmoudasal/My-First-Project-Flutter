@@ -42,15 +42,15 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       itemCount: state.DataS.data.banners.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        mainAxisExtent: 300,
+                        mainAxisExtent: 280,
                         crossAxisSpacing: 12,
-                        mainAxisSpacing: 12,
+                        mainAxisSpacing: 8,
                         crossAxisCount: 2,
                       ),
                       itemBuilder: ((context, index) {
                         return Container(
                           margin: EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), border: Border.all(color: Color.fromARGB(255, 255, 255, 255))),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), border: Border.all(color: Color.fromARGB(255, 171, 153, 205))),
                           child: InkWell(
                             // Navgator
                             onTap: () {
