@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../model/home_model.dart';
 import 'home.dart';
 
 class Login extends StatefulWidget {
@@ -157,11 +156,12 @@ class _LoginState extends State<Login> {
                             foregroundColor: Colors.black87),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: ((context) => Home()),
-                              ),
+                            Navigator.of(context).push(
+                              PageRouteBuilder(
+                                  pageBuilder: (context, animation, _) {
+                                    return Home();
+                                  },
+                                  opaque: false),
                             );
                           }
                         },
