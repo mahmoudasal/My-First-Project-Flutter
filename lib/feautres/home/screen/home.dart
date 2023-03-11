@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
                       scrollDirection: Axis.vertical,
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemCount: state.DataS.data.banners.length,
+                      itemCount: state.DataS.data.products.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         mainAxisExtent: 280,
                         crossAxisSpacing: 12,
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ProductInfo(state.DataS.data.products[index].id),
+                                  builder: (context) => ProductInfo(),
                                 ),
                               );
                             },

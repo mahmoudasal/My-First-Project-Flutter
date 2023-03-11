@@ -5,7 +5,7 @@ import '../bloc/cubit/home_cubit.dart';
 
 class ProductInfo extends StatelessWidget {
   const ProductInfo(
-    int id, {
+ {
     super.key,
   });
 
