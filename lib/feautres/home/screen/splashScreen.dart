@@ -1,8 +1,7 @@
+import 'package:creativa_app/feautres/home/screen/HomeReg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-import 'Login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.push(
           context,
           CupertinoPageRoute(
-            builder: (context) => Login(),
+            builder: (context) => LoginPage(),
           ),
         );
       },

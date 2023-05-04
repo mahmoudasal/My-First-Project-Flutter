@@ -1,5 +1,6 @@
+import 'package:creativa_app/feautres/home/screen/HomeReg.dart';
 import 'package:flutter/material.dart';
-import 'feautres/home/screen/Login.dart';
+import 'feautres/home/screen/navbar.dart';
 import 'feautres/home/screen/splashScreen.dart';
 
 void main() {
@@ -13,12 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "home",
+      initialRoute: "SplashS",
       routes: {
-        "Login": (context) => Login(),
-        "home": (context) => SplashScreen()
+        "HomeReg": (context) => LoginPage(),
+        "SplashS": (context) => SplashScreen(),
+        "Navpage": (context) => NavigatorScreen()
       },
     );
   }
 }
-
